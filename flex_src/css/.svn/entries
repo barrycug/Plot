@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/flex_src/css"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="css.css"
+   text-time="2010-03-02T09:41:57.166015Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="6e1c9f7bf72d1ac416976a3d5f1b2333"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="button.css"
+   text-time="2010-01-19T01:10:30.677734Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="ccbdbe812126ee86a0b8e8407df3ee4f"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="component.css"
+   text-time="2009-08-17T08:39:35.312500Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="67142351491b0bf7480dce677bf31c27"
+   last-author="zhangdp"
+   kind="file"/>
+</wc-entries>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/flex_src"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="Main.mxml"
+   text-time="2010-03-03T02:53:44.778320Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="e846d2808d6e104328d7b1c40be7b0a7"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="index.mxml"
+   text-time="2010-03-04T02:22:31.438981Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="3d2118430c361f00bece7356cbcda386"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   name="images"
+   kind="dir"/>
+<entry
+   committed-rev="47"
+   name="error.mxml"
+   text-time="2010-01-27T00:59:45.578125Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="31cc90cf0de89e5c28cbb6a222fbc1aa"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   name="compontent"
+   kind="dir"/>
+<entry
+   name="skins"
+   kind="dir"/>
+<entry
+   name="css"
+   kind="dir"/>
+<entry
+   name="com"
+   kind="dir"/>
+</wc-entries>

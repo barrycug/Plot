@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/java_src/com/esri/plotdemo/interaction"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="DynamicPlot.java"
+   text-time="2010-03-02T05:41:51.224609Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="e3314b21115f36f215cd8fa3e10df794"
+   last-author="zhangdp"
+   kind="file"/>
+</wc-entries>

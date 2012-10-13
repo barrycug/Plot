@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service id="remoting-service"
+	class="flex.messaging.services.RemotingService">
+
+	<adapters>
+		<adapter-definition id="java-object"
+			class="flex.messaging.services.remoting.adapters.JavaAdapter"
+			default="true" />
+	</adapters>
+
+	<default-channels>
+		<channel ref="my-amf" />
+	</default-channels>
+	<destination id="interaction" channels="my-amf">
+		<properties>
+			<source>com.esri.plotdemo.interaction.DynamicPlot</source>
+		</properties>
+	</destination>
+	<destination id="verfication" channels="my-amf">
+		<properties>
+			<source>com.esri.user.login.UserLog</source>
+		</properties>
+	</destination>
+	<destination id="getUsers" channels="my-amf">
+		<properties>
+			<source>com.esri.user.login.GetUsers</source>
+		</properties>
+	</destination>
+</service>
+

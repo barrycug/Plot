@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/flex_src/com/esrichina/tm/event"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="PlotDrawEvent.as"
+   text-time="2010-02-04T03:29:14.278320Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="5869b4e66c030c521927eeb1b401eb78"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="MapMouseEvent2.as"
+   text-time="2010-01-07T02:04:14.792968Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="e6a75209b479231ec76a7c596204e9c0"
+   last-author="zhangdp"
+   kind="file"/>
+</wc-entries>

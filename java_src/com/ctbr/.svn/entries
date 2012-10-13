@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/java_src/com/ctbr"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   name="config"
+   kind="dir"/>
+</wc-entries>

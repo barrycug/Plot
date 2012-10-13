@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/flex_src/com/esrichina/tm/register"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="EsriEmailValidator.as"
+   text-time="2010-02-01T05:45:33.583007Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="903dadd008f09821722427ff90b09db7"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="PassWordValidator.as"
+   text-time="2010-02-01T03:51:26.115234Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="b7098a82e625097ede187f4373437c69"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="PopEffect.as"
+   text-time="2010-02-04T06:39:53.735351Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="9194adf375c3c0b5cb64695594ccdb6b"
+   last-author="zhangdp"
+   kind="file"/>
+</wc-entries>

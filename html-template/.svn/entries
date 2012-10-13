@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/html-template"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="AC_OETags.js"
+   text-time="2010-01-18T03:20:22.035156Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="ae7242475f675615d0553a6ffb9756fa"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   name="history"
+   kind="dir"/>
+<entry
+   committed-rev="47"
+   name="playerProductInstall.swf"
+   text-time="2010-01-18T03:20:22.153320Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="be332eb9be4b3dcfdcd757bbc6e495e5"
+   last-author="zhangdp"
+   kind="file"
+   prop-time="2010-03-04T02:41:12.130081Z"/>
+<entry
+   committed-rev="47"
+   name="index.template.html"
+   text-time="2010-02-09T01:35:39.123046Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="2207185f291e656c8e9115d7dcf701b4"
+   last-author="zhangdp"
+   kind="file"/>
+</wc-entries>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/flex_src/com/esrichina/tm/plot"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="BaseToolBar.as"
+   text-time="2010-01-05T03:19:42.100585Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="904a879ec39b7be85ac0a20eeb8fb197"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="DrawType.as"
+   text-time="2010-02-10T07:15:36.924804Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="015e900d78cd2d42ae44d9e2da15926e"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="DynamicPlot.as"
+   text-time="2010-03-03T00:59:27.375000Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="c097bd143daa79f8855868f746358b98"
+   last-author="zhangdp"
+   kind="file"/>
+</wc-entries>

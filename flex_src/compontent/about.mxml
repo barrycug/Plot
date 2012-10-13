@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml"
+		   width="260"
+		   height="280"
+		   backgroundColor="#004A7B"
+		   color="#9EFFA0"
+		   borderStyle="solid"
+		   cornerRadius="8"
+		   borderColor="#35A1D1">
+	<mx:Script>
+
+		<![CDATA[
+			import mx.managers.PopUpManager;
+			[Bindable]
+			private var helpcontent:String="本系统不针对任何行业的图形标绘系统，主要用于项目的原型开发而用。主题菜单分三部分：基本功能；方案配置；关于系统；" + "如果你是管理员：在基本功能里可以使用基本标绘功能，现在主要图形有：旗标，线标，箭标，和其他，到现在为止：旗标功能完成，线标完成了基地符号和圆，箭标完成了多箭头，单箭头，和单一箭头，其他的里面有" + "高亮和属性编辑。" + "另外基本功能里含有放大，缩小，漫游,全图，清除，协同;还有语言文字的系统对话框";
+
+			private function close():void
+			{
+				this.visible=false;
+			}
+		]]>
+
+	</mx:Script>
+	<mx:Label x="7"
+			  y="8"
+			  text="系统帮助"
+			  width="79"
+			  height="20"
+			  fontSize="12"/>
+	<mx:Button x="227"
+			   y="4"
+			   id="closeself"
+			   fontSize="16"
+			   width="28"
+			   height="22"
+			   styleName="close"
+			   fontWeight="bold"
+			   click="close()"/>
+	<mx:TextArea x="10"
+				 y="36"
+				 height="232"
+				 width="238"
+				 color="#9CD8FF"
+				 editable="false"
+				 borderColor="#35A1D1"
+				 backgroundColor="#004A7B"
+				 text="{helpcontent}"
+				 fontSize="12"
+				 themeColor="#009DFF"/>
+</mx:Canvas>

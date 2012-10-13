@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/java_src/com/esri/dynamicplot/object"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="QXRY.java"
+   text-time="2009-12-17T08:19:20.141601Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="56ec34bc388de05366bf586dd80cdc5b"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="MapPolygonGraphic.java"
+   text-time="2009-12-17T09:26:18.934570Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="e09b539527a74c72e6359a381ccca44c"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="WZTP.java"
+   text-time="2009-12-17T08:19:20.106445Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="3f21b46cb9991de4c704b79fbbab7874"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="GXQUP.java"
+   text-time="2009-12-17T08:19:20.083007Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="8e665db13c82bfc4db1ab405998ea3e5"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="MapPointGraphic.java"
+   text-time="2009-12-17T08:57:25.056640Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="b02b2a93a2033fe4ed0018b9b583218e"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="MapPolylineGraphic.java"
+   text-time="2009-12-17T09:23:38.082031Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="50e7d01d68aec8441d8ad82229cd10c5"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="MapPoint.java"
+   text-time="2009-12-17T09:09:05.921875Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="afe5e919afb04770df3d61f9c04bf1e9"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="QXDWRY.java"
+   text-time="2009-12-17T08:19:20.172851Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="eaf59a0e9140655840349866d5966ff0"
+   last-author="zhangdp"
+   kind="file"/>
+</wc-entries>

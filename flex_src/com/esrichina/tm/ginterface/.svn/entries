@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/flex_src/com/esrichina/tm/ginterface"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="IBaseGraphic.as"
+   text-time="2010-01-14T02:05:04.645507Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="40832159faed2506cc9063517db2243f"
+   last-author="zhangdp"
+   kind="file"/>
+</wc-entries>

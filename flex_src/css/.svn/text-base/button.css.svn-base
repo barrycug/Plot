@@ -1,0 +1,21 @@
+/* CSS file */
+Button
+{
+	cornerRadius: 0;
+	color: #8CD2FF;
+	disabledColor: #FFFFFF;
+	textRollOverColor: #FFEA00;
+	textSelectedColor: #FFEA00;
+	borderColor: #8CD2FF;
+	themeColor: #8CD2FF;
+	fillAlphas: 1.0, 1.0;
+	fillColors: #004A7A, #004A7A;
+	upSkin: Embed(source="../images/3_06.png");
+	overSkin: Embed(source="../images/3_06.png");
+	downSkin: Embed(source="../images/3_06.png");
+	disabledSkin: Embed(source="../images/3_06.png");
+	selectedUpSkin: Embed(source="../images/3_06.png");
+	selectedOverSkin: Embed(source="../images/3_06.png");
+	selectedDownSkin: Embed(source="../images/3_06.png");
+	selectedDisabledSkin: Embed(source="../images/3_06.png");
+}

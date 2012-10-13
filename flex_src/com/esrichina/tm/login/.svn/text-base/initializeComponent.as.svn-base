@@ -1,0 +1,494 @@
+// ActionScript file
+//是否接受到用户
+import com.esri.ags.toolbars.Navigation;
+import com.esrichina.tm.serializeGraphic.SerializGraphicToString;
+
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.external.ExternalInterface;
+import flash.net.SharedObject;
+import flash.net.URLLoader;
+import flash.net.URLRequest;
+import flash.system.System;
+
+import mx.collections.ArrayCollection;
+import mx.controls.Alert;
+import mx.events.FlexEvent;
+import mx.events.ItemClickEvent;
+import mx.managers.CursorManager;
+import mx.managers.CursorManagerPriority;
+import mx.messaging.ChannelSet;
+import mx.messaging.channels.AMFChannel;
+import mx.messaging.channels.StreamingAMFChannel;
+import mx.messaging.events.MessageFaultEvent;
+import mx.messaging.messages.AsyncMessage;
+import mx.messaging.messages.IMessage;
+import mx.rpc.events.FaultEvent;
+import mx.rpc.events.ResultEvent;
+import mx.rpc.remoting.mxml.RemoteObject;
+
+//本地共享对象
+public var so:SharedObject;
+//得到历史方案的数组
+[Bindable]
+private var projects:ArrayCollection=new ArrayCollection();
+//自定义远程对象
+private var reobj:RemoteObject;
+//定义一个底图种类的list
+private var map_list:XMLList;
+//读取的urlload
+private var urlload:URLLoader;
+
+/**
+ *实例化各种组件并添加到主界面
+ *
+ */
+private function init():void
+{
+	so=SharedObject.getLocal("user", "/");
+	var limits:String=so.data.limits;
+	if (limits == null || "" == limits)
+	{
+		var requestURL:URLRequest=new URLRequest();
+		requestURL.url="error.html";
+		navigateToURL(requestURL, "_self");
+		return;
+	}
+	else
+	{
+		this.addEventListener(FlexEvent.CREATION_COMPLETE, creatComponent, false, 0, true);
+	}
+}
+
+private function creatComponent(event:FlexEvent):void
+{
+
+	so=SharedObject.getLocal("user", "/");
+	var username:String=so.data.username;
+	var limits:String=so.data.limits;
+	//访问历史方案
+	if (username != null && username != "")
+	{
+		reobj=new RemoteObject();
+		reobj.destination="interaction";
+		reobj.endpoint="messagebroker/amf";
+		reobj.addEventListener(ResultEvent.RESULT, getprojects, false, 0, true);
+		reobj.addEventListener(FaultEvent.FAULT, BackError, false, 0, true);
+		reobj.getProjects();
+	}
+	if ("admin" == limits)
+	{
+		menuBar.presentuser.text="当前用户：" + username;
+		//添加主题标绘菜单
+
+		var obj:XML=new XML("<menuItem id='m1_2' label='基本标绘'/>");
+		var changemap:XML=new XML("<menuItem id='m3_2' label='底图更改'/>");
+		var list:XMLList=menuBar.menuXMLList;
+
+		for each (var element:XML in list)
+		{
+			if (element.@id == "m1")
+			{
+				element.appendChild(obj);
+			}
+			else if (element.@id == "m3")
+			{
+
+				element.appendChild(changemap);
+			}
+		}
+		readXML();
+		menuBar.menuXMLList=list;
+			//基本工具的显示
+		/* 		clear.visible=true;
+		 xietong.visible=true; */
+
+		/* 		basetool.clear.visible=true;
+		   basetool.xietong.visible=true;
+		 basetool.grapeditor.visible=true; */
+	}
+	else if ("guest" == limits)
+	{
+		menuBar.presentuser.text="当前用户：" + username;
+	}
+//实例化基本工具组件
+	/* 	basetool.zoomin.addEventListener(MouseEvent.CLICK, active, false, 0, true);
+	   basetool.zoomout.addEventListener(MouseEvent.CLICK, active, false, 0, true);
+	   basetool.pan.addEventListener(MouseEvent.CLICK, active, false, 0, true);
+	   basetool.fullmap.addEventListener(MouseEvent.CLICK, active, false, 0, true);
+	   basetool.clear.addEventListener(MouseEvent.CLICK, active, false, 0, true);
+	   basetool.xietong.addEventListener(MouseEvent.CLICK, active, false, 0, true);
+	 basetool.grapeditor.addEventListener(MouseEvent.CLICK, active, false, 0, true); */
+
+//图形订阅功能
+	subscribe();
+	//动态加载其他项
+	menuBar.closeself.addEventListener(MouseEvent.CLICK, logOut, false, 0, true);
+	//关闭浏览器时要用
+	ExternalInterface.addCallback("getUser", getUser);
+}
+
+private function getUser():String
+{
+	if (so.data.username != null)
+		return so.data.username.toString();
+	else
+	{
+		return null;
+	}
+}
+
+/**
+ *图形的协同订阅
+ *
+ */
+private function subscribe():void
+{
+	var myStreamingAMF:AMFChannel=new StreamingAMFChannel("my-streaming-amf", "messagebroker/streamingamf");
+	var myPollingAMF:AMFChannel=new AMFChannel("my-polling-amf", "messagebroker/amfpolling");
+	myPollingAMF.pollingEnabled=true;
+	myPollingAMF.pollingInterval=2000;
+	var channelSet:ChannelSet=new ChannelSet();
+	channelSet.addChannel(myStreamingAMF);
+	channelSet.addChannel(myPollingAMF);
+	graphicconsumer.channelSet=channelSet;
+	graphicproduce.channelSet=channelSet;
+	graphicproduce.destination="feed";
+	graphicconsumer.destination="feed";
+	graphicconsumer.subscribe();
+}
+
+/**
+ *得到方案名称
+ * @param event
+ *
+ */
+private function getprojects(event:ResultEvent):void
+{
+	projects.removeAll();
+	projects=event.result as ArrayCollection;
+	var list:XMLList=menuBar.menuXMLList;
+	for each (var element:XML in list)
+	{
+		if (element.@id == "m2")
+		{
+			for each (var node:XML in element.elements())
+			{
+				if (node.@id == "m21")
+				{
+					//删除xml的所有节点
+					//for(var i:int=0;i<node.length();i++){
+					delete node.menuitem;
+					//}
+					var xmlobj:XML;
+					if (projects.length > 0)
+					{
+						for (var j:int=0; j < projects.length; j++)
+						{
+							xmlobj=new XML("<menuitem id='m22_" + j + "' label='" + projects.getItemAt(j).project.toString() + "'/>");
+							node.appendChild(xmlobj);
+						}
+					}
+
+				}
+			}
+		}
+	}
+	menuBar.menuXMLList=list;
+}
+
+
+/**
+ *用户退出系统
+ * @param event
+ *
+ */
+private function logOut(event:MouseEvent):void
+{
+	if (so.data.username != null && so.data.username != "")
+	{
+
+		userlogout.logOut(so.data.username.toString());
+		//so.clear();
+		System.gc();
+	}
+}
+
+/**
+ *关闭浏览器，并删除一些内存垃圾
+ * @param event
+ *
+ */
+private function userLogOut(event:ResultEvent):void
+{
+	var status:Boolean=event.result as Boolean;
+	if (status == true)
+	{
+		ExternalInterface.call("Close");
+	}
+	else
+	{
+		Alert.show("你不能关闭浏览器!", "ERROR TIP");
+	}
+	//清除本地共享对象
+	//so.clear();
+	//清除flex所占内存
+	System.gc();
+}
+
+/**
+ *
+ *处理错误
+ * @param event
+ *
+ */
+private function BackError(event:FaultEvent):void
+{
+	Alert.show(event.message.toString(), "Error TIP");
+}
+
+/**
+ *实例化保存框,并增加两个监听
+ *
+ */
+private function createSavePanl():void
+{
+	savepanl.setStyle("showEffect", cussolveIn);
+	this.addChild(savepanl);
+	savepanl.setStyle("hideEffect", cussolveOut);
+	savepanl.x=500;
+	savepanl.y=300;
+	this.setChildIndex(savepanl, this.numChildren - 1);
+	savepanl.qxbutton.addEventListener(MouseEvent.CLICK, cancel, false, 0, true);
+	savepanl.qdbutton.addEventListener(MouseEvent.CLICK, proToDB, false, 0, true);
+}
+
+/**
+ *发送后台实现方案的显示功能
+ * @param event
+ *
+ */
+private function proToDB(event:MouseEvent):void
+{
+	reobj=new RemoteObject();
+	reobj.destination="interaction";
+	reobj.endpoint="messagebroker/amf";
+	reobj.addEventListener(FaultEvent.FAULT, backError);
+	reobj.addEventListener(ResultEvent.RESULT, getResult);
+	//对graphicsLayer进行序列化
+	var gps:String=SerializGraphicToString.SerializeGraphics(mygraphicslayer, esrimap);
+	reobj.sendToDB(gps, savepanl.protext.text.toString(), so.data.username);
+	//把保存框隐藏
+	savepanl.visible=false;
+}
+
+/**
+ *返回错误信息
+ * @param event
+ *
+ */
+private function backError(event:FaultEvent):void
+{
+	reobj.removeEventListener(FaultEvent.FAULT, backError);
+	Alert.show(event.message.toString(), "Error TIP");
+}
+
+/**
+ *执行保存方案，并把新方案添加到菜单
+ * @param event
+ *
+ */
+private function getResult(event:ResultEvent):void
+{
+	reobj.removeEventListener(ResultEvent.RESULT, getResult);
+	//加到菜单上去
+	reobj.getProjects();
+	reobj.addEventListener(ResultEvent.RESULT, changeMenu, false, 0, true);
+	//Alert.show(event.message.toString(),"TIP INFO");
+}
+
+/**
+ *更改菜单,动态更改菜单
+ * @param event
+ *
+ */
+private function changeMenu(event:ResultEvent):void
+{
+	reobj.removeEventListener(ResultEvent.RESULT, changeMenu);
+	getprojects(event);
+}
+
+/**
+ *保存对话框的隐藏
+ * @param event
+ *
+ */
+private function cancel(event:MouseEvent):void
+{
+	savepanl.visible=false;
+}
+
+/**
+ *协同的返回错误信息
+ * @param event
+ *
+ */
+private function showfault(event:MessageFaultEvent):void
+{
+	Alert.show(event.message.toString(), "dd");
+}
+
+/**
+ *消息传递实现图形的协同效果
+ * @param message
+ *
+ */
+private function addGraphicToLayer(message:IMessage):void
+{
+	if (message.body.layerstr != null)
+	{
+		var layerstr:String=message.body.layerstr.toString();
+		//trace(layerstr);
+		SerializGraphicToString.deSerializeGraphics(layerstr, mygraphicslayer, esrimap);
+	}
+}
+
+/**
+ *基本工具函数-----,
+ * @param event
+ *
+ */
+private function active(event:ItemClickEvent):void
+{
+	navigationtool.deactivate();
+	drawtool.deactivate();
+	CursorManager.removeAllCursors();
+	switch (event.item.label)
+	{
+		case "放大":
+		{
+			CursorManager.setCursor(_zoomin, CursorManagerPriority.HIGH, -8, -8);
+			navigationtool.activate(Navigation.ZOOM_IN);
+			break;
+		}
+		case "缩小":
+		{
+			CursorManager.setCursor(_zoomout, CursorManagerPriority.HIGH, -8, -8);
+			navigationtool.activate(Navigation.ZOOM_OUT);
+			break;
+		}
+		case "漫游":
+		{
+			navigationtool.activate(Navigation.PAN);
+			break;
+		}
+		case "全图":
+		{
+			navigationtool.zoomToFullExtent();
+			break;
+		}
+
+		case "图形清除":
+		{
+			if (so.data.limits == "admin")
+			{
+				drawtool.activate("Clear");
+			}
+			break;
+		}
+
+		case "方案协同":
+		{
+			var layerstr:String=SerializGraphicToString.SerializeGraphics(mygraphicslayer, esrimap);
+			if (layerstr != null && layerstr != "" && so.data.limits == "admin")
+			{
+				var message:IMessage=new AsyncMessage();
+				message.body.layerstr=layerstr;
+				graphicproduce.send(message);
+			}
+			else if (so.data.limits != "admin")
+			{
+				Alert.show("您的权限不够不能协同", "INFO TIP");
+			}
+			break;
+		}
+		case "图形编辑":
+		{
+			if (so.data.limits == "admin")
+				drawtool.activate("GRAPHICEDIT");
+			break;
+		}
+		default:
+		{
+			return;
+			break;
+		}
+	}
+}
+
+/**
+ *初始化choosetool
+ *
+ */
+private function initchoosetool():void
+{
+	choosetool.x=400;
+	choosetool.y=500;
+	esrimap.addChild(choosetool);
+}
+
+/**
+ *初始化帮助对话框
+ *
+ */
+private function initabout():void
+{
+	abouttool.x=300;
+	abouttool.y=300;
+	abouttool.setStyle("showEffect", cussolveIn);
+	this.addChild(abouttool);
+	this.setChildIndex(abouttool, this.numChildren - 1);
+	abouttool.setStyle("hideEffect", cussolveOut);
+}
+
+/**
+ *
+ * @return
+ *
+ */
+private function readXML():void
+{
+	var url:URLRequest=new URLRequest("com/maps/maps.xml");
+	urlload=new URLLoader(url);
+	urlload.addEventListener(Event.COMPLETE, completeHandler, false, 0, true);
+}
+
+/**
+ *
+ *完成读取xml
+ */
+private function completeHandler(event:Event):void
+{
+	var xml:XML=new XML(event.target.data);
+	map_list=xml.elements();
+
+	urlload.removeEventListener(Event.COMPLETE, completeHandler);
+	//增加到底图更改里
+	var list:XMLList=menuBar.menuXMLList;
+	for each (var element:XML in list)
+	{
+		if (element.@id == "m3")
+		{
+			for each (var node:XML in element.elements())
+			{
+				if (node.@id == "m3_2")
+				{
+					for each (var l:XML in map_list)
+					{
+						node.appendChild(l);
+					}
+				}
+			}
+		}
+	}
+}

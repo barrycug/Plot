@@ -1,0 +1,473 @@
+/* CSS file */
+ToggleButtonBar
+{
+	firstButtonStyleName: toggleButtonBarFirstButton;
+	selectedButtonTextStyleName: toggleButtonBarSelectedButtonText;
+	buttonStyleName: toggleButtonBarButton;
+	lastButtonStyleName: toggleButtonBarLastButton;
+}
+.toggleButtonBarFirstButton
+{
+	borderColor: #35a1d1;
+	themeColor: #004A7A;
+	fillAlphas: 1.0, 1.0, 1.0, 1.0;
+	fillColors: #004A7A, #004A7A;
+}
+.toggleButtonBarSelectedButtonText
+{
+}
+.toggleButtonBarButton
+{
+	borderColor: #35a1d1;
+	themeColor: #004A7A;
+	fillAlphas: 1.0, 1.0, 1.0, 1.0;
+	fillColors: #004A7A, #004A7A;
+}
+.toggleButtonBarLastButton
+{
+	borderColor: #35a1d1;
+	themeColor: #004A7A;
+	fillAlphas: 1.0, 1.0, 1.0, 1.0;
+	fillColors: #004A7A, #004A7A;
+}
+
+LinkButton
+{
+	color: #8CD2FF;
+	textRollOverColor: #FFD800;
+	textSelectedColor: #FFD800;
+	rollOverColor: #005991;
+	selectionColor: #003D64;
+}
+ToggleButtonBar
+{
+	firstButtonStyleName: toggleButtonBarFirstButton;
+}
+Button.exitButton
+{
+	upSkin: Embed(source="../images/exitup.png");
+	overSkin: Embed(source="../images/exitover.png");
+	downSkin: Embed(source="../images/exitover.png");
+	disabledSkin: Embed(source="../images/exitup.png");
+} 
+List 
+{
+   backgroundAlpha: 1;
+   backgroundColor: #004a7a;
+   rollOverColor: #60c0ff;
+   textRollOverColor: #004a7a;
+   borderStyle: none;
+   borderThickness: 0;
+   selectionColor: #004a7a;
+   color: #DCF1FF;
+   textSelectedColor: #9effa0;
+   textIndent: 3;
+   letterSpacing: 0;
+   selectionDuration: 396;
+   dropShadowEnabled: false;
+   fontSize: 12;
+	paddingLeft: 1;
+	paddingTop: 1;
+	paddingBottom: 1;
+}
+
+Button.bt01
+{
+	paddingLeft: 0;
+	paddingRight: 0;
+	paddingTop: 0;
+	paddingBottom: 0;
+	upSkin: Embed(source="../images/up_01.png");
+	overSkin: Embed(source="../images/up_01.png");
+	downSkin: Embed(source="../images/down_01.png");
+	disabledSkin: Embed(source="../images/up_01.png");
+	selectedUpSkin: Embed(source="../images/up_01.png");
+	selectedOverSkin: Embed(source="../images/down_01.png");
+	selectedDownSkin: Embed(source="../images/down_01.png");
+	selectedDisabledSkin: Embed(source="../images/down_01.png");
+}
+Button.bt02
+{
+	paddingLeft: 0;
+	paddingRight: 0;
+	paddingTop: 0;
+	paddingBottom: 0;
+	upSkin: Embed(source="../images/up_02.png");
+	overSkin: Embed(source="../images/up_02.png");
+	downSkin: Embed(source="../images/down_02.png");
+	disabledSkin: Embed(source="../images/up_02.png");
+	selectedUpSkin: Embed(source="../images/up_02.png");
+	selectedOverSkin: Embed(source="../images/down_02.png");
+	selectedDownSkin: Embed(source="../images/down_02.png");
+	selectedDisabledSkin: Embed(source="../images/down_02.png");
+}Button.bt03
+{
+	paddingLeft: 0;
+	paddingRight: 0;
+	paddingTop: 0;
+	paddingBottom: 0;
+	upSkin: Embed(source="../images/up_03.png");
+	overSkin: Embed(source="../images/up_03.png");
+	downSkin: Embed(source="../images/down_03.png");
+	disabledSkin: Embed(source="../images/up_03.png");
+	selectedUpSkin: Embed(source="../images/up_03.png");
+	selectedOverSkin: Embed(source="../images/down_03.png");
+	selectedDownSkin: Embed(source="../images/down_03.png");
+	selectedDisabledSkin: Embed(source="../images/down_03.png");
+}Button.bt04
+{
+	paddingLeft: 0;
+	paddingRight: 0;
+	paddingTop: 0;
+	paddingBottom: 0;
+	upSkin: Embed(source="../images/up_04.png");
+	overSkin: Embed(source="../images/up_04.png");
+	downSkin: Embed(source="../images/down_04.png");
+	disabledSkin: Embed(source="../images/up_04.png");
+	selectedUpSkin: Embed(source="../images/up_04.png");
+	selectedOverSkin: Embed(source="../images/down_04.png");
+	selectedDownSkin: Embed(source="../images/down_04.png");
+	selectedDisabledSkin: Embed(source="../images/down_04.png");
+}
+CheckBox
+{
+	paddingLeft: 5;
+	paddingRight: 5;
+	horizontalGap: 7;
+	color: #dcf1ff;
+	textRollOverColor: #FFD800;
+	textSelectedColor: #FFD800;
+	fontSize: 12;
+	leading: 2;
+	upIcon: Embed(source="../images/CheckBox_upIcon.png");
+	overIcon: Embed(source="../images/CheckBox_upIcon.png");
+	downIcon: Embed(source="../images/CheckBox_upIcon.png");
+	disabledIcon: Embed(source="../images/CheckBox_upIcon.png");
+	selectedUpIcon: Embed(source="../images/CheckBox_selectedUpIcon.png");
+	selectedOverIcon: Embed(source="../images/CheckBox_selectedUpIcon.png");
+	selectedDownIcon: Embed(source="../images/CheckBox_selectedUpIcon.png");
+	selectedDisabledIcon: Embed(source="../images/CheckBox_selectedDisabledIcon.png");
+}
+TabNavigator
+{
+	firstTabStyleName: tabNavigatorFirstTab;
+	color: #DCF1FF;
+	tabStyleName: tabNavigatorTab;
+	backgroundColor: #004A7B;
+	fontSize: 12;
+	fontWeight: normal;
+	disabledColor: #FFD800;
+	selectedTabTextStyleName: tabNavigatorSelectedTabText;
+	lastTabStyleName: tabNavigatorLastTab;
+	backgroundSize: "100%";
+}
+Grid
+{
+	horizontalGap: 0;
+	verticalGap: 0;
+	borderStyle: none;
+	borderColor: #35A1D1;
+}
+GridItem
+{
+	borderColor: #35A1D1;
+	borderStyle: none;
+}
+
+Panel.xtpanel
+{
+	backgroundColor: #35A1D1;
+}
+Button.btxxt
+{
+	cornerRadius: 0;
+	color: #8CD2FF;
+	disabledColor: #FFFFFF;
+	textRollOverColor: #FFEA00;
+	textSelectedColor: #FFEA00;
+	borderColor: #8CD2FF;
+	themeColor: #8CD2FF;
+	fillAlphas: 1.0, 1.0;
+	fillColors: #004A7A, #004A7A;
+	upSkin: Embed(source="../images/btxxtup.png");
+	overSkin: Embed(source="../images/btxxtover.png");
+	downSkin: Embed(source="../images/btxxtover.png");
+	disabledSkin: Embed(source="../images/btxxtover.png");
+	selectedUpSkin: Embed(source="../images/btxxtup.png");
+	selectedOverSkin: Embed(source="../images/btxxtover.png");
+	selectedDownSkin: Embed(source="../images/btxxtover.png");
+	selectedDisabledSkin: Embed(source="../images/btxxtover.png");
+}
+Button.btxxt1
+{
+	cornerRadius: 0;
+	color: #8CD2FF;
+	disabledColor: #FFFFFF;
+	textRollOverColor: #FFEA00;
+	textSelectedColor: #FFEA00;
+	borderColor: #8CD2FF;
+	themeColor: #8CD2FF;
+	fillAlphas: 1.0, 1.0;
+	fillColors: #004A7A, #004A7A;
+	upSkin: Embed(source="../images/btxxtup1.png");
+	overSkin: Embed(source="../images/btxxtover1.png");
+	downSkin: Embed(source="../images/btxxtover1.png");
+	disabledSkin: Embed(source="../images/btxxtover1.png");
+	selectedUpSkin: Embed(source="../images/btxxtup1.png");
+	selectedOverSkin: Embed(source="../images/btxxtover1.png");
+	selectedDownSkin: Embed(source="../images/btxxtover1.png");
+	selectedDisabledSkin: Embed(source="../images/btxxtover1.png");
+}
+Button.button1
+{
+	cornerRadius: 0;
+	color: #8CD2FF;
+	disabledColor: #FFFFFF;
+	textRollOverColor: #FFEA00;
+	textSelectedColor: #FFEA00;
+	borderColor: #8CD2FF;
+	themeColor: #8CD2FF;
+	fillAlphas: 1.0, 1.0;
+	fillColors: #004A7A, #004A7A;
+	upSkin: Embed(source="../images/button1.png");
+	overSkin: Embed(source="../images/button1.png");
+	downSkin: Embed(source="../images/button1.png");
+	disabledSkin: Embed(source="../images/button1.png");
+	selectedUpSkin: Embed(source="../images/button1.png");
+	selectedOverSkin: Embed(source="../images/button1.png");
+	selectedDownSkin: Embed(source="../images/button1.png");
+	selectedDisabledSkin: Embed(source="../images/button1.png");
+}
+Button.button2
+{
+	cornerRadius: 0;
+	color: #8CD2FF;
+	disabledColor: #FFFFFF;
+	textRollOverColor: #FFEA00;
+	textSelectedColor: #FFEA00;
+	borderColor: #8CD2FF;
+	themeColor: #8CD2FF;
+	fillAlphas: 1.0, 1.0;
+	fillColors: #004A7A, #004A7A;
+	upSkin: Embed(source="../images/button2.png");
+	overSkin: Embed(source="../images/button2.png");
+	downSkin: Embed(source="../images/button2.png");
+	disabledSkin: Embed(source="../images/button2.png");
+	selectedUpSkin: Embed(source="../images/button2.png");
+	selectedOverSkin: Embed(source="../images/button2.png");
+	selectedDownSkin: Embed(source="../images/button2.png");
+	selectedDisabledSkin: Embed(source="../images/button2.png");
+}
+Button.close
+{
+	cornerRadius: 0;
+	color: #8CD2FF;
+	disabledColor: #FFFFFF;
+	textRollOverColor: #FFEA00;
+	textSelectedColor: #FFEA00;
+	borderColor: #8CD2FF;
+	themeColor: #8CD2FF;
+	fillAlphas: 1.0, 1.0, 1.0, 1.0;
+	fillColors: #FFFFFF, #004A7A;
+	paddingLeft: 0;
+	paddingRight: 0;
+	paddingTop: 0;
+	paddingBottom: 0;
+	upSkin: Embed(source="../images/closeup.png");
+	overSkin: Embed(source="../images/closeover.png");
+	downSkin: Embed(source="../images/closeover.png");
+	disabledSkin: Embed(source="../images/closeover.png");
+	selectedUpSkin: Embed(source="../images/closeup.png");
+	selectedOverSkin: Embed(source="../images/closeover.png");
+	selectedDownSkin: Embed(source="../images/closeover.png");
+	selectedDisabledSkin: Embed(source="../images/closeup.png");
+	leading: 0;
+	horizontalGap: 0;
+}
+MenuBar.MenuBarup
+{
+	itemUpSkin: Embed(source="../images/button2.png");
+	itemOverSkin: Embed(source="../images/button2.png");
+	itemDownSkin: Embed(source="../images/button2.png");
+	color: #8CD2FF;
+	fillAlphas: 1.0, 1.0, 1.0, 1.0;
+	fontSize: 12;
+	disabledColor: #F4F700;
+	textRollOverColor: #06D3FF;
+	textSelectedColor: #06D3FF;
+	borderColor: #FFFFFF;
+	backgroundSkin: Embed(source="../images/transparent.png");
+}
+MenuBar.MenuBarover
+{
+	itemUpSkin: Embed(source="../images/button2.png");
+	itemOverSkin: Embed(source="../images/button2.png");
+	itemDownSkin: Embed(source="../images/button2.png");
+	color: #FFD800;
+	fillAlphas: 1.0, 1.0, 1.0, 1.0;
+	fontSize: 12;
+	disabledColor: #F4F700;
+	textRollOverColor: #06D3FF;
+	textSelectedColor: #06D3FF;
+	borderColor: #FFFFFF;
+	backgroundSkin: Embed(source="../images/transparent.png");
+}
+MenuBar
+{
+	itemUpSkin: Embed(source="../images/button2.png");
+ 	itemOverSkin: Embed(source="../images/menubarober.png");
+	itemDownSkin: Embed(source="../images/menubarober.png"); 
+	color: #8CD2FF;
+	fillAlphas: 1.0, 1.0, 1.0, 1.0;
+	fontSize: 12;
+	disabledColor: #F4F700;
+	textRollOverColor: #06D3FF;
+	textSelectedColor: #06D3FF;
+	borderColor: #FFFFFF;
+	backgroundSkin: Embed(source="../images/transparent.png");
+}
+Menu
+{
+	borderStyle: solid;
+	color: #FFFFFF;
+	borderColor: #35A1D1;
+	borderThickness: 1;
+	cornerRadius: 4;
+	rollOverColor: #FFAE00;
+	textRollOverColor: #004A7B;
+	branchIcon: Embed(source="../images/next.png");
+	branchDisabledIcon: Embed(source="../images/CheckBox_selectedUpIcon.png");
+	checkIcon: Embed(source="../images/next.png");
+	radioIcon: Embed(source="../images/next.png");
+	verticalScrollBarStyleName: menuVerticalScrollBar;
+	paddingTop: 5;
+	paddingBottom: 5;
+	textSelectedColor: #004A7B;
+	selectionColor: #FFAE00;
+	paddingLeft: 0;
+}
+
+Panel
+{
+	fontSize: 12;
+	fontWeight: normal;
+	controlBarStyleName: panelControlBar;
+	headerHeight: 28;
+	backgroundColor: #FFFFFF;
+	borderColor: #0F4D74;
+	borderAlpha: 1.0;
+	backgroundSize: "100%";
+	borderThicknessLeft: 5;
+	borderThicknessRight: 5;
+	borderThicknessBottom: 5;
+	borderThicknessTop: 5;
+	cornerRadius: 6;
+	color: #FFFFFF;
+	disabledColor: #F21801;
+	titleStyleName: panelTitle;
+	statusStyleName: panelStatus;
+	backgroundAlpha: 0.0;
+	roundedBottomCorners: true;
+}
+ScrollBar
+{
+	trackSkin: Embed(source="../images/ScrollTrack_Skin.png",scaleGridLeft="2",scaleGridTop="2",scaleGridRight="19",scaleGridBottom="165");
+	downArrowUpSkin: Embed(source="../images/ScrollArrowDown_upSkin.png");
+	downArrowOverSkin: Embed(source="../images/ScrollArrowDown_upSkin.png");
+	downArrowDownSkin: Embed(source="../images/ScrollArrowDown_upSkin.png");
+	downArrowDisabledSkin: Embed(source="../images/ScrollArrowDown_upSkin.png");
+	upArrowUpSkin: Embed(source="../images/ScrollArrowUp_upSkin.png");
+	upArrowOverSkin: Embed(source="../images/ScrollArrowUp_upSkin.png");
+	upArrowDownSkin: Embed(source="../images/ScrollArrowUp_upSkin.png");
+	upArrowDisabledSkin: Embed(source="../images/ScrollArrowUp_upSkin.png");
+	borderColor: #004A7B;
+	thumbUpSkin: Embed(source="../images/ScrollThumb_upSkin.png",scaleGridBottom="51",scaleGridLeft="1",scaleGridTop="1",scaleGridRight="14");
+	thumbOverSkin: Embed(source="../images/ScrollThumb_upSkin.png",scaleGridBottom="51",scaleGridLeft="1",scaleGridTop="1",scaleGridRight="14");
+	thumbDownSkin: Embed(source="../images/ScrollThumb_upSkin.png",scaleGridBottom="51",scaleGridLeft="1",scaleGridTop="1",scaleGridRight="14");
+}
+.panelControlBar
+{
+	horizontalAlign: center;
+	fontSize: 12;
+}
+.panelTitle
+{
+	textAlign: center;
+}
+.panelStatus
+{
+	color: #FFFFFF;
+}
+.tabNavigatorFirstTab
+{
+	upSkin: Embed(source="../images/tabup.png");
+	overSkin: Embed(source="../images/tabup.png");
+	downSkin: Embed(source="../images/tabdown.png");
+	disabledSkin: Embed(source="../images/tabup.png");
+	selectedDownSkin: Embed(source="../images/tabdown.png");
+	selectedUpSkin: Embed(source="../images/tabdown.png");
+	selectedOverSkin: Embed(source="../images/tabdown.png");
+	selectedDisabledSkin: Embed(source="../images/tabup.png");
+	color: #DCF1FF;
+	textRollOverColor: #DCF1FF;
+	textSelectedColor: #DCF1FF;
+	disabledColor: #06D3FF;
+	fontWeight: normal;
+	fontSize: 12;
+}
+.tabNavigatorTab
+{
+	upSkin: Embed(source="../images/tabup.png");
+	overSkin: Embed(source="../images/tabup.png");
+	downSkin: Embed(source="../images/tabdown.png");
+	disabledSkin: Embed(source="../images/tabup.png");
+	selectedDownSkin: Embed(source="../images/tabdown.png");
+	selectedUpSkin: Embed(source="../images/tabdown.png");
+	selectedOverSkin: Embed(source="../images/tabdown.png");
+	selectedDisabledSkin: Embed(source="../images/tabup.png");
+	color: #DCF1FF;
+	textRollOverColor: #DCF1FF;
+	textSelectedColor: #DCF1FF;
+	disabledColor: #06D3FF;
+	fontSize: 12;
+	fontWeight: normal;
+}
+.tabNavigatorSelectedTabText
+{
+	color: #FFD800;
+}
+.tabNavigatorLastTab
+{
+	upSkin: Embed(source="../images/tabup.png");
+	overSkin: Embed(source="../images/tabup.png");
+	downSkin: Embed(source="../images/tabdown.png");
+	disabledSkin: Embed(source="../images/tabup.png");
+	selectedDownSkin: Embed(source="../images/tabdown.png");
+	selectedUpSkin: Embed(source="../images/tabdown.png");
+	selectedOverSkin: Embed(source="../images/tabdown.png");
+	selectedDisabledSkin: Embed(source="../images/tabup.png");
+	color: #DCF1FF;
+	textRollOverColor: #DCF1FF;
+	textSelectedColor: #DCF1FF;
+	disabledColor: #06D3FF;
+	fontWeight: normal;
+	fontSize: 12;
+}
+.listVerticalScrollBar
+{
+}
+Canvas
+{
+   shadowDistance: 9;
+   shadowDirection: right;
+   dropShadowColor: #333333;
+}
+.menuVerticalScrollBar
+{
+	borderColor: #54D5FF;
+	fillAlphas: 1.0, 1.0;
+	fillColors: #03FFEA, #03FFEA;
+}
+.toggleButtonBarFirstButton
+{
+}

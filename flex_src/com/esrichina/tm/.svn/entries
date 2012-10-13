@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/flex_src/com/esrichina/tm"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   name="graphics"
+   kind="dir"/>
+<entry
+   name="utils"
+   kind="dir"/>
+<entry
+   name="event"
+   kind="dir"/>
+<entry
+   name="register"
+   kind="dir"/>
+<entry
+   name="edit"
+   kind="dir"/>
+<entry
+   name="serializeGraphic"
+   kind="dir"/>
+<entry
+   name="symbol"
+   kind="dir"/>
+<entry
+   name="ginterface"
+   kind="dir"/>
+<entry
+   name="login"
+   kind="dir"/>
+<entry
+   name="geometry"
+   kind="dir"/>
+<entry
+   name="plot"
+   kind="dir"/>
+</wc-entries>

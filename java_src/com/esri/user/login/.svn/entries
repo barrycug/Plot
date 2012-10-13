@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/java_src/com/esri/user/login"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="UserLog.java"
+   text-time="2010-02-02T01:37:11.990234Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="c781c4d4ab21e8384d145a32db27d580"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="GetUsers.java"
+   text-time="2010-01-25T07:44:35.368164Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="2ef13e8a378075c1ffaa4f0ea4145d32"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="LogOut.java"
+   text-time="2010-01-27T03:07:25.555664Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="00e28b977f93d59397df1c2f1612814a"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="User.java"
+   text-time="2010-01-25T07:41:53.399414Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="12756f411034055d5b76a4f1017091a1"
+   last-author="zhangdp"
+   kind="file"/>
+</wc-entries>

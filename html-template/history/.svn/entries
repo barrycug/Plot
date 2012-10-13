@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/html-template/history"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="historyFrame.html"
+   text-time="2010-01-18T03:20:22.050781Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="6fa7be3b800c905eb54326ff2968c38d"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="history.css"
+   text-time="2010-01-18T03:20:22.038085Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="ea88b47fa138d83654c3e5afd6503bd4"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="history.js"
+   text-time="2010-01-18T03:20:22.045898Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="6b6ebb7276959af9717bbe45e56cbc4a"
+   last-author="zhangdp"
+   kind="file"/>
+</wc-entries>

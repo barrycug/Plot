@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml"
+		   width="275.2"
+		   height="92" visible="true" x="400" y="50">
+	<!--定义一个颜色和透明度转化框-->
+	<mx:ApplicationControlBar dock="true" x="7" y="6.4" height="80" width="260.6" fillAlphas="[1.0, 1.0]" fillColors="[#004A7B, #004A7B]" alpha="1.0">
+		<mx:Form styleName="plain" width="241" height="49" backgroundAlpha="0.0">
+			<mx:FormItem fontSize="12" color="#8CD2FF" label="透明度：">
+				<mx:HSlider id="slider"
+							minimum="0.0"
+							maximum="1.0"
+							value="1.0"
+							snapInterval="0.1"
+							tickInterval="0.1"
+							liveDragging="true" width="172.4" height="18" borderColor="#FFFFFF" fillAlphas="[1.0, 1.0]" fillColors="[#FFFFFF, #FFFFFF]" tickColor="#FFFFFF"/>
+			</mx:FormItem>
+			<mx:FormItem label="颜色:" fontSize="12" color="#8CD2FF">
+				<mx:ColorPicker id="colorPicker"
+								selectedColor="#FFD800" width="22" height="22"/>
+			</mx:FormItem>
+		</mx:Form>
+	</mx:ApplicationControlBar>
+
+</mx:Canvas>

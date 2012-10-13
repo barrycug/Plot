@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml"
+		   width="365"
+		   height="255"
+		   creationComplete="subscribe()">
+	<mx:Move id="cooperateMove"
+			 target="{this}"/>
+	<mx:Canvas x="30"
+			   y="6"
+			   id="chatCanvas"
+			   width="333"
+			   height="244"
+			   borderStyle="solid"
+			   cornerRadius="4"
+			   borderColor="#35A1D1"
+			   themeColor="#004A7A"
+			   backgroundColor="#004A7B"
+			   showEffect="fade">
+
+		<mx:VBox x="10"
+				 y="10"
+				 height="222"
+				 width="83"
+				 borderColor="#35A1D1"
+				 borderStyle="solid"
+				 cornerRadius="4">
+			<mx:Label text="人员列表"
+					  color="#FFD800"
+					  fontSize="12"
+					  width="53"
+					  height="19"/>
+			<mx:HRule width="81"
+					  height="1"
+					  strokeColor="#35A1D1"
+					  themeColor="#60C0FF"/>
+			<mx:List width="80"
+					 height="187.5"
+					 id="users"
+					 backgroundColor="#004A7B"
+					 borderStyle="none"
+					 color="#9CD8FF"
+					 fontSize="12"
+					 labelField="user"
+					 iconField="limits"
+					 dataProvider="{ulist}" 
+					 creationComplete="addRightEvent()">
+			</mx:List>
+		</mx:VBox>
+		<mx:Button x="259"
+				   y="208"
+				   label="发 送"
+				   styleName="button1"
+				   fontSize="12"
+				   fontWeight="normal"
+				   click="sendcontent()"/>
+		<mx:Button x="189"
+				   y="208"
+				   label="取 消"
+				   styleName="button1"
+				   fontSize="12"
+				   fontWeight="normal"
+				   click="cancelcontent()"/>
+		<mx:VBox x="101.3"
+				 y="10"
+				 height="89.25"
+				 width="220"
+				 borderColor="#60C0FF"
+				 borderStyle="solid"
+				 cornerRadius="4">
+			<mx:Label text="历史记录"
+					  color="#FFD800"
+					  fontSize="12"
+					  width="53"
+					  height="19.333334"/>
+			<mx:HRule width="218"
+					  height="1"
+					  strokeColor="#35A1D1"
+					  themeColor="#60C0FF"/>
+			<mx:TextArea width="215"
+						 height="54"
+						 id="acceptplotcontent"
+						 text=""
+						 color="#9CD8FF"
+						 borderStyle="none"
+						 backgroundColor="#004A7B"
+						 fontSize="12"
+						 condenseWhite="true"
+						 editable="false"/>
+		</mx:VBox>
+		<mx:VBox x="101"
+				 y="107.25"
+				 height="92.40001"
+				 width="220"
+				 borderColor="#60C0FF"
+				 borderStyle="solid"
+				 cornerRadius="4">
+			<mx:Label text="消息记录"
+					  color="#FFD800"
+					  fontSize="12"
+					  width="53"
+					  height="19.666666"/>
+			<mx:HRule width="218"
+					  height="1"
+					  strokeColor="#35A1D1"
+					  themeColor="#60C0FF"/>
+			<mx:TextArea width="215"
+						 height="58.333336"
+						 id="sendplotcontent"
+						 text="收到，你可以继续标绘！"
+						 color="#9CD8FF"
+						 borderStyle="none"
+						 backgroundColor="#004A7B"
+						 fontSize="12"
+						 keyDown="send(event)"/>
+		</mx:VBox>
+	</mx:Canvas>
+	<mx:Button x="4"
+			   y="5"
+			   id="chatButton"
+			   width="30"
+			   height="84"
+			   styleName="btxxt"
+			   click="showCanvas()"/>
+	<mx:Producer id="producer"
+				 fault="showfault(event)"/>
+	<mx:Consumer id="consumer"
+				 message="messageHandler(event.message)"
+				 fault="showfault(event)"/>
+	<mx:RemoteObject id="requestUsers"
+					 destination="getUsers"
+					 endpoint="messagebroker/amf"
+					 concurrency="last">
+		<mx:method name="getUsers"
+				   result="backUser(event)"
+				   fault="getFault(event)">
+
+		</mx:method>
+		<mx:method name="changeLimits"
+				   result="backStatus(event)"
+				   fault="getFault(event)">
+
+		</mx:method>
+	</mx:RemoteObject>
+	<mx:Script>
+		<![CDATA[
+		public var main:Main;
+			include "../com/esrichina/chat/chatFunction.as";
+			//定义不同权限的人具有的不同图标
+		  [Embed(source="../images/admin.gif")]   
+		  public var admin:Class;
+		 [Embed(source="../images/guest.gif")]   
+		  public var guest:Class;
+		]]>
+	</mx:Script>
+</mx:Canvas>

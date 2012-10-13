@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
+				xmlns:cus="compontent.*"
+				layout="absolute"
+				backgroundGradientAlphas="[1.0, 1.0]"
+				backgroundGradientColors="[#005A93, #005A93]">
+	<mx:Script>
+		<![CDATA[
+			import com.esrichina.tm.register.PopEffect;
+			import mx.controls.Alert;
+			import mx.rpc.events.ResultEvent;
+			import compontent.Register;
+			import mx.managers.PopUpManager;
+			include "com/esrichina/tm/login/userlog.as";
+
+			private function sendUser():void
+			{
+				requestUser.LogIn(user.text, pwd.text);
+			}
+
+			private function clearUser():void
+			{
+				user.text="";
+				pwd.text="";
+			}
+
+			private var register:Register=new Register();
+
+			/* 弹出注册对话框 */
+			private function createRegister():void
+			{
+				PopEffect.Show(register, this);
+				register.registeruser.addEventListener(MouseEvent.CLICK, sendUserToDB, false, 0, true);
+			}
+
+			//把用户信息发送到数据库
+			private function sendUserToDB(event:MouseEvent):void
+			{
+				var user:String=register.usertext.text.toString();
+				var pwd:String=register.userpwdtext.text.toString();
+				var surepwd:String=register.usersuretext.text.toString();
+				var mail:String=register.useremailtext.text.toString();
+				if (pwd != surepwd)
+				{
+					Alert.show("您填写的有误！", "ERROR TIP");
+					return;
+				}
+				if (user != "" && pwd != "" && surepwd != "" && mail != "")
+				{
+					requestUser.registerUser(user, pwd, mail);
+				}
+			}
+
+			//处理返回结果
+			private function RegisterUserBack(event:ResultEvent):void
+			{
+				var flag:String=event.result.toString();
+				if (flag != "sucessed")
+					Alert.show(flag, "ERROR TIP!");
+				else
+				{
+					Alert.show("注册成功！！", "TIP");
+					PopEffect.Hide(register);
+				}
+				register.registeruser.removeEventListener(MouseEvent.CLICK, sendUserToDB);
+			}
+		]]>
+	</mx:Script>
+	<mx:Style source="css/css.css">
+	</mx:Style>
+	<cus:login id="ee"
+			   horizontalCenter="0"
+			   verticalCenter="3">
+		<mx:TextInput x="369"
+					  y="146"
+					  width="135"
+					  id="user"
+					  backgroundColor="#AEE0FF"
+					  borderStyle="none"
+					  color="#004A7A"
+					  height="20"
+					  fontSize="12"/>
+		<mx:TextInput x="369"
+					  y="176"
+					  width="135"
+					  id="pwd"
+					  backgroundColor="#AEE0FF"
+					  borderStyle="none"
+					  color="#004A7A"
+					  height="20"
+					  fontSize="12"
+					  displayAsPassword="true"
+					  enter="sendUser()"/>
+		<mx:Button styleName="button1"
+				   x="370"
+				   y="204.65"
+				   label="登 录"
+				   fontSize="12"
+				   width="56"
+				   height="21.333332"
+				   fontStyle="normal"
+				   textDecoration="normal"
+				   fontWeight="normal"
+				   click="sendUser()"/>
+		<mx:Button styleName="button1"
+				   x="448"
+				   y="204.65"
+				   label="重 置"
+				   fontSize="12"
+				   width="56"
+				   height="21.333332"
+				   fontWeight="normal"
+				   click="clearUser()"/>
+		<mx:LinkButton x="10"
+					   y="205"
+					   label="新用户注册"
+					   fontSize="14"
+					   fontWeight="normal"
+					   click="createRegister()"/>
+	</cus:login>
+
+	<mx:RemoteObject id="requestUser"
+					 destination="verfication"
+					 endpoint="messagebroker/amf"
+					 concurrency="last">
+		<mx:method result="NavigateURL(event)"
+				   fault="BackError(event)"
+				   name="LogIn"/>
+		<mx:method result="RegisterUserBack(event)"
+				   fault="BackError(event)"
+				   name="registerUser"/>
+	</mx:RemoteObject>
+</mx:Application>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/java_src/com/esri/demo/dbconnection"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="ConnectGISServer.java"
+   text-time="2009-12-18T03:07:15.990234Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="a849980b5c50a285848a5c9542afffdc"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="OraOpt.java"
+   text-time="2009-12-18T03:07:16.087890Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="63201d2b20d91ba6cc01b59ec0cf449e"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="StringTypeHandler.java"
+   text-time="2010-03-02T03:16:59.399414Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="170657fbf3a36e8dae7f6af49046ff74"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="ConnectDATABASE.java"
+   text-time="2010-03-01T07:58:48.810546Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="944f758c3c163b8322d7001b81f742b0"
+   last-author="zhangdp"
+   kind="file"/>
+</wc-entries>

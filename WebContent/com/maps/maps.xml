@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<menuitem id='m32_1"' label="ArcGIS Online" url="http://server.arcgisonline.com/ArcGIS/rest/services/ESRI_StreetMap_World_2D/MapServer"/>
+<menuitem id='m32_2"' label="北京地图" url="http://60.247.103.46/arcgis/rest/services/China/MapServer"/>
+</root>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute">
+<mx:Canvas width="920" height="350" backgroundColor="#004A7B" color="#9EFFA0" borderStyle="solid" cornerRadius="8" horizontalCenter="0" verticalCenter="0" borderColor="#35A1D1" backgroundAlpha="0.8">
+	
+
+		<mx:Label x="7" y="8" text="温馨提示！" textAlign="center" width="615" height="20" fontSize="12" color="#FFD800"/>
+	<mx:TextArea x="10" y="36" height="285" width="872" color="#9CD8FF" borderColor="#35A1D1" backgroundColor="#004A7B" text="应用程序发生错误！请您重新登录！" textAlign="center" textDecoration="none" fontSize="20" themeColor="#009DFF" backgroundAlpha="0.7"/>
+	</mx:Canvas>
+</mx:Application>

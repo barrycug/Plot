@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="46"
+   name=""
+   committed-date="2010-03-04T02:40:25.525760Z"
+   url="svn://192.168.200.11/flex/Plot"
+   last-author="zhangdp"
+   kind="dir"
+   uuid="57012802-b746-054a-b9e8-c7f07688b1ca"
+   repos="svn://192.168.200.11"
+   revision="46"/>
+<entry
+   committed-rev="47"
+   name=".classpath"
+   text-time="2010-03-04T01:33:13.567801Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="d2c8ef85473bd4ab78aa0f4188459cb1"
+   last-author="zhangdp"
+   kind="file"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name=".project"
+   text-time="2010-02-23T07:52:23.792968Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="1f9756c46e19b53adc961bdd845ba3f7"
+   last-author="zhangdp"
+   kind="file"
+   revision="47"/>
+<entry
+   name="flex_src"
+   kind="dir"/>
+<entry
+   name="flex_libs"
+   kind="dir"/>
+<entry
+   name="java_src"
+   kind="dir"/>
+<entry
+   committed-rev="47"
+   name=".flexProperties"
+   text-time="2010-03-04T01:30:48.874525Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="c7bd17f8cde8e48bd0ec3a205b8e9fe9"
+   last-author="zhangdp"
+   kind="file"
+   revision="47"/>
+<entry
+   name="html-template"
+   kind="dir"/>
+<entry
+   committed-rev="47"
+   name=".actionScriptProperties"
+   text-time="2010-03-04T01:43:58.059663Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="3709763d6a776d84abc1240fd40a30f9"
+   last-author="zhangdp"
+   kind="file"
+   revision="47"/>
+<entry
+   name=".settings"
+   kind="dir"/>
+</wc-entries>

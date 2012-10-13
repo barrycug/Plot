@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/flex_src/com/esrichina/tm/utils"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="SerializeClass.as"
+   text-time="2010-01-22T02:21:54.724609Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="2b8e21fe64bb1d5f913400bf8d2fb11f"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="ASUtil.as"
+   text-time="2010-02-24T06:04:47.061523Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="9c68799215949f70120c49711b88a2a5"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="SarrowUtil.as"
+   text-time="2010-02-10T02:03:09.903320Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="62867764e3b897454d9062e42c14c22a"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="RelationUtil.as"
+   text-time="2010-02-23T02:13:56.697265Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="12c3f7c226cfee7a5996e8ba778f2e78"
+   last-author="zhangdp"
+   kind="file"/>
+</wc-entries>

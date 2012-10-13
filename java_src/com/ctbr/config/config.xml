@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+	<module name="DataSource">
+	<!--最多支持10个数据源,从ds0到ds9-->
+		<group name="ds0">
+					<configValue key="DataSourceName">orazkbr</configValue>
+
+			<configValue key="SqlMapFile">com/ctbr/config/SqlMapConfig.xml</configValue>
+		</group>
+	</module>
+	<module name="global">
+		<group name="debug">
+			<configValue key="DebugMode">true</configValue>
+		</group>
+		<group name="config">
+			<configValue key="StartTimer">false</configValue>
+			<!--configValue key="DAOImplClassName">com.ctbr.das.serviceimpl.DebugDAOServiceImpl</configValue-->
+			<configValue key="DAOImplClassName">com.ctbr.das.serviceimpl.DAOServiceImpl</configValue>
+		</group>
+
+	</module>
+</Config>

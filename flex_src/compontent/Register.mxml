@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml"
+		   xmlns:cus="com.esrichina.tm.register.*"
+		   width="260"
+		   height="250"
+		   backgroundColor="#004A7B"
+		   color="#9EFFA0"
+		   borderStyle="solid"
+		   cornerRadius="8"
+		   borderColor="#35A1D1">
+	<mx:Label x="27.2"
+			  y="8"
+			  text="用户注册"
+			  width="79"
+			  height="20"
+			  fontSize="12"
+			  color="#FFD800"/>
+	<mx:Image x="10.4"
+			  y="9"
+			  source="images/people.png"/>
+	<mx:LinkButton x="15.5"
+				   y="210"
+				   label="返回登录"
+				   fontSize="12"
+				   fontWeight="normal"
+				   click="removeRegister()"/>
+	<mx:Canvas x="15.5"
+			   y="36"
+			   width="227"
+			   height="160"
+			   borderStyle="solid"
+			   borderColor="#35A1D1"
+			   cornerRadius="3">
+		<mx:Label y="12.5"
+				  text="用户名："
+				  width="55.5"
+				  height="24"
+				  id="userlabel"
+				  enabled="true"
+				  fontSize="12"
+				  color="#8CD2FF"
+				  fontWeight="normal"
+				  x="11.5"/>
+		<mx:TextInput x="73"
+					  y="12.5"
+					  id="usertext"
+					  backgroundColor="#AEE0FF"
+					  borderStyle="none"
+					  color="#004A7B"
+					  width="139"
+					  height="22"
+					  fontSize="12"/>
+		<mx:Label y="51.5"
+				  text="密   码："
+				  width="55.5"
+				  height="24"
+				  id="userpwd"
+				  enabled="true"
+				  fontSize="12"
+				  color="#8CD2FF"
+				  fontWeight="normal"
+				  x="11.5"/>
+		<mx:Label y="87.5"
+				  text="确   认："
+				  width="55.5"
+				  height="24"
+				  id="usersure"
+				  enabled="true"
+				  fontSize="12"
+				  color="#8CD2FF"
+				  fontWeight="normal"
+				  x="11.5"/>
+		<mx:TextInput x="73"
+					  y="50"
+					  id="userpwdtext"
+					  backgroundColor="#AEE0FF"
+					  borderStyle="none"
+					  displayAsPassword="true"
+					  color="#004A7B"
+					  width="139"
+					  height="22"
+					  fontSize="12"/>
+		<mx:TextInput x="73"
+					  y="88"
+					  id="usersuretext"
+					  backgroundColor="#AEE0FF"
+					  borderStyle="none"
+					  color="#004A7B"
+					  width="139"
+					  displayAsPassword="true"
+					  height="22"
+					  fontSize="12"/>
+		<mx:Label y="126"
+				  text="Email："
+				  width="51.5"
+				  height="24"
+				  id="useremail"
+				  enabled="true"
+				  fontSize="12"
+				  color="#8CD2FF"
+				  fontWeight="normal"
+				  x="15.5"/>
+		<mx:TextInput x="73"
+					  y="125"
+					  id="useremailtext"
+					  backgroundColor="#AEE0FF"
+					  borderStyle="none"
+					  color="#004A7B"
+					  width="139"
+					  height="22"
+					  fontSize="12"/>
+	</mx:Canvas>
+	<mx:Button id="registeruser"
+			   styleName="button1"
+			   x="180.5"
+			   y="210"
+			   label="注  册"
+			   fontSize="12"
+			   fontWeight="normal"
+			   color="#8CD2FF"/>
+	<!--定义验证组件-->
+	<cus:PassWordValidator id="pwdvalidator"
+						   Password="{userpwdtext.text}"
+						   source="{usersuretext}"
+						   required="true"
+						   property="text"
+						   trigger="{usersuretext}"
+						   triggerEvent="focusOut"/>
+	<cus:EsriEmailValidator id="emailvalidator"
+							required="true"
+							source="{useremailtext}"
+							property="text"
+							requiredFieldError="必须输入E-mail"
+							invalidCharError="E-mail地址中有错误字符。"
+							invalidDomainError="E-mail地址中的域名不符合规范。"
+							invalidIPDomainError="E-mail地址中的IP格式域名不符合规范。"
+							invalidPeriodsInDomainError="域名中的“.”错误。"
+							missingAtSignError="E-mail地址缺少“@”符号。"
+							missingPeriodInDomainError="域名中缺少“.”"
+							missingUsernameError="E-mail地址缺少用户名。"
+							tooManyAtSignsError="E-mail地址中的“@”符号太多。"
+							trigger="{useremailtext}"
+							triggerEvent="focusOut"/>
+	<mx:Script>
+		<![CDATA[
+			import com.esrichina.tm.register.PopEffect;
+			import mx.managers.PopUpManager;
+
+			private function removeRegister():void
+			{
+				PopEffect.Hide(this);
+			}
+		]]>
+	</mx:Script>
+</mx:Canvas>

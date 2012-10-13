@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/flex_src/images/assets"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="lsarrow_up.png"
+   text-time="2010-01-22T04:00:50.775000Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="fb08d64cc6893559d7eb9e2d8e7893d3"
+   last-author="zhangdp"
+   kind="file"
+   prop-time="2010-03-04T02:41:12.523103Z"/>
+<entry
+   committed-rev="47"
+   name="building.png"
+   text-time="2010-01-22T04:00:50.873000Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="44dfb7d771234468e110e9892c87c949"
+   last-author="zhangdp"
+   kind="file"
+   prop-time="2010-03-04T02:41:12.578107Z"/>
+<entry
+   committed-rev="47"
+   name="base_up.png"
+   text-time="2010-01-22T04:00:51.031000Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="3de0673466ac44aea260ea83b7fb79a8"
+   last-author="zhangdp"
+   kind="file"
+   prop-time="2010-03-04T02:41:11.757060Z"/>
+<entry
+   committed-rev="47"
+   name="arc_over.png"
+   text-time="2010-01-22T04:00:51.268000Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="1ae35084b7f8175e74f260388ba7a82f"
+   last-author="zhangdp"
+   kind="file"
+   prop-time="2010-03-04T02:41:12.408097Z"/>
+<entry
+   committed-rev="47"
+   name="lsarrow_over.png"
+   text-time="2010-01-22T04:00:50.754000Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="c7438f4f4e66162ad4abccea41d54ad0"
+   last-author="zhangdp"
+   kind="file"
+   prop-time="2010-03-04T02:41:11.692056Z"/>
+<entry
+   committed-rev="47"
+   name="base_over.png"
+   text-time="2010-01-22T04:00:51.002000Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="d2c5d223069d232503824e38a1512040"
+   last-author="zhangdp"
+   kind="file"
+   prop-time="2010-03-04T02:41:11.986073Z"/>
+<entry
+   committed-rev="47"
+   name="arc_up.png"
+   text-time="2010-01-22T04:00:51.284000Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="51d6dc7d24a20360a5aaa95e2ccf64af"
+   last-author="zhangdp"
+   kind="file"
+   prop-time="2010-03-04T02:41:12.517103Z"/>
+</wc-entries>

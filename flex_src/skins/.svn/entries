@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/flex_src/skins"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="CustomDefaultItemRenderer.mxml"
+   text-time="2009-09-18T08:27:43.671875Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="ad5699162ed0f032112580008ac53fc7"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="CustomListSkin.mxml"
+   text-time="2009-09-18T08:24:02.234375Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="9a2fa99f2be14efd1d4193be64644a36"
+   last-author="zhangdp"
+   kind="file"/>
+</wc-entries>

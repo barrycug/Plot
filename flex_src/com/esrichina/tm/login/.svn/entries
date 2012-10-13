@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/flex_src/com/esrichina/tm/login"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="User.as"
+   text-time="2010-01-25T07:40:59.758789Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="3d0287b06a02349c362ccde1dd336b5e"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="userlog.as"
+   text-time="2010-01-20T05:49:20.823242Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="cfaa25b9865f52978d9e38b7cf905de7"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="initializeComponent.as"
+   text-time="2010-03-03T01:02:57.943359Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="56c0b025b976fd907b92cb0b18451fde"
+   last-author="zhangdp"
+   kind="file"/>
+</wc-entries>

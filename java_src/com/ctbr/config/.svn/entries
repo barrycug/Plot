@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/java_src/com/ctbr/config"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="db.properties"
+   text-time="2010-02-21T09:25:20.324804Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="7c33921da56090c8854026508e69dbbd"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="SqlMapConfig.xml"
+   text-time="2010-03-02T05:58:49.939453Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="49f0c903a6c81d85939a586a5e8bd563"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="config.xml"
+   text-time="2010-03-01T08:16:44.087890Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="fcbce2d0503f533d74607a3845d9e319"
+   last-author="zhangdp"
+   kind="file"/>
+</wc-entries>

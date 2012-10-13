@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml"
+		   width="465"
+		   height="42"
+		   backgroundImage="images/toolbar.png">
+	<mx:Script>
+		<![CDATA[
+			import com.esrichina.tm.serializeGraphic.SerializGraphicToString;
+			import mx.effects.Iris;
+			import mx.effects.Blur;
+			import com.esrichina.tm.edit.DragDisplayObject;
+			import mx.rpc.events.FaultEvent;
+			import mx.rpc.events.ResultEvent;
+			import mx.messaging.channels.StreamingAMFChannel;
+			import mx.rpc.remoting.mxml.RemoteObject;
+			import mx.controls.Alert;
+			import mx.events.MenuEvent;
+			public var main:Main;
+
+			private function menuHandler(event:MenuEvent):void
+			{
+				switch (event.label)
+				{
+					case "基本工具":
+					{
+						main.basetool.visible=!(main.basetool.visible);
+						break;
+					}
+					case "基本标绘":
+					{
+						var baseplot:basePlot=new basePlot();
+						baseplot.id="bplot";
+						baseplot.main=main;
+						main.isplot=!(main.isplot);
+						if (main.isplot)
+						{
+							baseplot.y=67;
+							baseplot.x=main._width - 280;
+							main.addChild(baseplot);
+							DragDisplayObject.clearDrag();
+							DragDisplayObject.getDragObjectInstance(main.esrimap, baseplot);
+						}
+						else
+						{
+							for (var i:int=0; i < main.numChildren; i++)
+							{
+								var item:DisplayObject=main.getChildAt(i);
+								if (item is basePlot)
+								{
+
+									main.removeChildAt(i);
+									break;
+								}
+							}
+						}
+						break;
+					}
+
+					case "保存方案":
+					{
+						if (main.so.data.limits == "admin")
+						{
+
+							main.savepanl.visible=!(main.savepanl.visible);
+							if (main.savepanl.visible == true)
+							{
+								DragDisplayObject.clearDrag();
+								DragDisplayObject.getDragObjectInstance(main.esrimap, main.savepanl);
+							}
+							break;
+						}
+						else
+						{
+							Alert.show("你的权限不够！", "ERROR TIP");
+							break;
+						}
+					}
+					case "新建方案":
+					{
+						if (main.so.data.limits == "admin")
+						{
+							main.mygraphicslayer.clear();
+						}
+						else
+						{
+							Alert.show("您的权限不够！请以管理员权限登录！", "ErroR TIP");
+						}
+						break;
+					}
+					case "系统帮助":
+					{
+						main.abouttool.visible=!(main.abouttool.visible);
+						if (main.abouttool.visible == true)
+						{
+							DragDisplayObject.clearDrag();
+							DragDisplayObject.getDragObjectInstance(main.esrimap, main.abouttool);
+						}
+						break;
+					}
+
+					default:
+					{
+						if (event.label != null && event.label != "" && event.item.@url.toString() == "")
+						{
+							var project:String=event.label;
+							var reobj:RemoteObject=new RemoteObject();
+							reobj.destination="interaction";
+							reobj.endpoint="messagebroker/amf";
+							reobj.addEventListener(ResultEvent.RESULT, progps, false, 0, true);
+							reobj.addEventListener(FaultEvent.FAULT, backError, false, 0, true);
+							reobj.getGraphicFeature(project);
+						}
+						else if (event.item.@url.toString() != "" && main.so.data.limits == "admin")
+						{
+							var url:String=event.item.@url.toString();
+							main.cachemaplayer.url=url;
+							main.cachemaplayer.refresh();
+						}
+					}
+						break;
+						return;
+				}
+			}
+
+			private function progps(event:ResultEvent):void
+			{
+				//显示图形
+				var layerstr:String=event.result.toString();
+				SerializGraphicToString.deSerializeGraphics(layerstr, main.mygraphicslayer, main.esrimap);
+			}
+
+			private function backError(event:FaultEvent):void
+			{
+				Alert.show(event.message.toString(), "Error TIP");
+			}
+		]]>
+	</mx:Script>
+	<mx:XMLList id="menuXMLList"
+				xmlns="">
+		<menuItem id="m1"
+				  label="基本功能">
+			<menuItem id="m1_1"
+					  label="基本工具"/>
+		</menuItem>
+		<menuItem id="m2"
+				  label="方案配置">
+			<menuItem id="m2_1"
+					  label="新建方案"/>
+			<menuItem id="m21"
+					  label="历史方案">
+			</menuItem>
+			<menuItem id="m2_2"
+					  label="保存方案"/>
+		</menuItem>
+		<menuItem id="m3"
+				  label="关于系统">
+			<menuItem id="m3_1"
+					  label="系统帮助"/>
+		</menuItem>
+	</mx:XMLList>
+	<mx:MenuBar x="14"
+				y="11"
+				id="menu"
+				dataProvider="{menuXMLList}"
+				labelField="@label"
+				width="232"
+				height="22"
+				color="#DCF1FF"
+				itemClick="menuHandler(event)">
+	</mx:MenuBar>
+	<mx:Label x="308"
+			  y="13"
+			  id="presentuser"
+			  text=""
+			  color="#3AFFEF"
+			  fontSize="12"/>
+	<mx:Button x="423"
+			   y="10"
+			   id="closeself"
+			   width="30"
+			   height="24"
+			   styleName="exitButton"/>
+</mx:Canvas>

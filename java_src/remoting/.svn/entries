@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/java_src/remoting"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="ValueObject.java"
+   text-time="2009-12-10T09:26:27.458984Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="7cdae9f9cadd0cdec3cbf09e57fae784"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="GetYL.java"
+   text-time="2009-12-18T03:07:15.771484Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="a258bf3eeddbea2f5d8f6ce64cffd82b"
+   last-author="zhangdp"
+   kind="file"/>
+<entry
+   committed-rev="47"
+   name="GetProject.java"
+   text-time="2009-12-10T09:26:27.449218Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="0d8fc0fa000b4e78f0b9151f160b8fe0"
+   last-author="zhangdp"
+   kind="file"/>
+</wc-entries>

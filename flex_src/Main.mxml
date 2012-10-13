@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
+				xmlns:cus="compontent.*"
+				xmlns:draw="com.esrichina.tm.plot.*"
+				layout="absolute"
+				backgroundGradientAlphas="[1.0, 1.0]"
+				backgroundGradientColors="[#005A93, #005A93]"
+				horizontalScrollPolicy="off"
+				verticalScrollPolicy="off"
+				preinitialize="init()"
+				xmlns:esri="http://www.esri.com/2008/ags"
+				frameRate="40">
+	<mx:Style source="css/css.css">
+	</mx:Style>
+	<mx:Script>
+		<![CDATA[
+			//是否加载基本标绘的东西
+			public var isplot:Boolean=false;
+			public var _width:Number=Capabilities.screenResolutionX;
+			public var _height:Number=Capabilities.screenResolutionY;
+			//鼠标形状
+			[Embed(source='images/zoomin.png')]
+			private var _zoomin:Class;
+			[Embed(source='images/zoomout.png')]
+			private var _zoomout:Class;
+
+			private function resize():void
+			{
+				cooperatecomponent.x=_width - 30;
+			}
+			include "com/esrichina/tm/login/initializeComponent.as";
+		]]>
+	</mx:Script>
+	<!-- 地图部分-->
+	<esri:Map id="esrimap"
+			  x="0"
+			  y="0"
+			  width="100%"
+			  height="100%"
+			  logoVisible="false">
+		<esri:extent>
+			<esri:Extent xmin="116.23"
+						 ymin="39.83"
+						 xmax="116.50"
+						 ymax="40.03"/>
+		</esri:extent>
+		<esri:ArcGISTiledMapServiceLayer id="cachemaplayer"
+										url="http://server.arcgisonline.com/ArcGIS/rest/services/ESRI_StreetMap_World_2D/MapServer">
+		</esri:ArcGISTiledMapServiceLayer>
+		<esri:GraphicsLayer id="mygraphicslayer"/>
+	</esri:Map>
+	<mx:Image x="40"
+			  y="10"
+			  source="images/logo.png"/>
+	<!--基本工具框-->
+	<mx:ToggleButtonBar x="0"
+						y="250"
+						width="30"
+						barColor="#004a7a"
+						shadowDirection="right"
+						direction="vertical"
+						id="basetool"
+						itemClick="active(event)"
+						iconField="icon"
+						labelField="label"
+						toolTipField="tip"
+						toggleOnClick="true">
+		<mx:dataProvider>
+			<mx:Array>
+				<mx:Object idd="zoomin"
+						   tip="放大"
+						   label="放大"
+						   icon="@Embed(source='images/zoomin_over.png')"/>
+				<mx:Object idd="zoomout"
+						   tip="缩小"
+						   label="缩小"
+						   icon="@Embed(source='images/zoomout_over.png')"/>
+				<mx:Object idd="pingyi"
+						   tip="漫游"
+						   label="漫游"
+						   icon="@Embed(source='images/pingyi_over.png')"/>
+				<mx:Object idd="quantu"
+						   tip="全图"
+						   label="全图"
+						   icon="@Embed(source='images/quantu_over.png')"/>
+				<mx:Object idd="clear"
+						   tip="图形清除"
+						   label="图形清除"
+						   icon="@Embed(source='images/clear_over.png')"/>
+				<mx:Object idd="plot"
+						   tip="方案协同"
+						   label="方案协同"
+						   icon="@Embed(source='images/plot_over.png')"/>
+				<mx:Object idd="edit"
+						   tip="图形编辑"
+						   label="图形编辑"
+						   icon="@Embed(source='images/edit_over.png')"/>
+			</mx:Array>
+		</mx:dataProvider>
+	</mx:ToggleButtonBar>
+	<!--菜单框-->
+	<cus:menuBar id="menuBar"
+				 x="40"
+				 y="47"
+				 main="{this}">
+	</cus:menuBar>
+	<!--系统帮助框-->
+	<cus:about id="abouttool"
+			   borderColor="#35A1D1"
+			   color="#FFD800"
+			   label="系统帮助"
+			   visible="false"
+			   creationComplete="initabout()"/>
+	<!--协同标绘框-->
+	<cus:cooperatePlot id="cooperatecomponent"
+					   bottom="10"
+					   creationComplete="resize()"
+					   main="{this}"/>
+	<!--保存方案框-->
+	<cus:SavePanl id="savepanl"
+				  visible="false"
+				  creationComplete="createSavePanl()"/>
+	<!--远程对象定义-->
+	<mx:RemoteObject id="userlogout"
+					 destination="verfication"
+					 endpoint="messagebroker/amf">
+		<mx:method name="logOut"
+				   result="userLogOut(event)"
+				   fault="BackError(event)"/>
+	</mx:RemoteObject>
+	<!--定义生产者和消费者-->
+	<mx:Producer id="graphicproduce" destination="feed" 
+				 fault="showfault(event)"/>
+	<mx:Consumer id="graphicconsumer"
+				 message="addGraphicToLayer(event.message)" destination="feed"
+				 fault="showfault(event)"/>
+	<!--基本工具-->
+
+	<esri:Navigation id="navigationtool"
+					 map="{esrimap}"/>
+	<draw:DynamicPlot id="drawtool"
+					  map="{esrimap}"
+					  graphicsLayer="{mygraphicslayer}"/>
+	<!--属性工具-->
+	<cus:ChooseTool id="choosetool"
+					visible="false"
+					creationComplete="initchoosetool()"/>
+	<!--特效类-->
+	<mx:Dissolve id="cussolveOut"
+				 alphaFrom="1.0"
+				 alphaTo="0.0"
+				 duration="1000"/>
+	<mx:Dissolve id="cussolveIn"
+				 alphaFrom="0.0"
+				 alphaTo="1.0"
+				 duration="1000"/>
+</mx:Application>

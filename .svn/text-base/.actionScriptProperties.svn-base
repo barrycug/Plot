@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<actionScriptProperties mainApplicationPath="Plot.mxml" version="3">
+<compiler additionalCompilerArguments="-services &quot;D:/workspace/Plot/WebContent/WEB-INF/flex/services-config.xml&quot; -locale en_US" copyDependentFiles="true" enableModuleDebug="true" generateAccessible="false" htmlExpressInstall="true" htmlGenerate="true" htmlHistoryManagement="true" htmlPlayerVersion="9.0.124" htmlPlayerVersionCheck="true" outputFolderPath="WebContent" rootURL="http://localhost:8080/Plot" sourceFolderPath="flex_src" strict="true" useApolloConfig="false" verifyDigests="true" warn="true">
+<compilerSourcePath/>
+<libraryPath defaultLinkType="3">
+<libraryPathEntry kind="4" path=""/>
+<libraryPathEntry kind="1" linkType="1" path="flex_libs"/>
+<libraryPathEntry kind="3" linkType="1" path="E:/flex-lib包/ArcGIS_Flex/libs/agslib-1.3-2009-10-31.swc" useDefaultLinkType="false"/>
+</libraryPath>
+<sourceAttachmentPath/>
+</compiler>
+<applications>
+<application path="error.mxml"/>
+<application path="index.mxml"/>
+<application path="Main.mxml"/>
+</applications>
+<modules/>
+<buildCSSFiles/>
+</actionScriptProperties>

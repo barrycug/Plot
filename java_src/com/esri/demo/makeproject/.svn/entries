@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="47"
+   name=""
+   committed-date="2010-03-04T02:40:38.458243Z"
+   url="svn://192.168.200.11/flex/Plot/java_src/com/esri/demo/makeproject"
+   last-author="zhangdp"
+   kind="dir"
+   repos="svn://192.168.200.11"
+   revision="47"/>
+<entry
+   committed-rev="47"
+   name="ZaiQing.java"
+   text-time="2009-12-18T03:07:15.916015Z"
+   committed-date="2010-03-04T02:40:38.458243Z"
+   checksum="3f4e444bc9d1a02f7bfd379481c95c7c"
+   last-author="zhangdp"
+   kind="file"/>
+</wc-entries>
